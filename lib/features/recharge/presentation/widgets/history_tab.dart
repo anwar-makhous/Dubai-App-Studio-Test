@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:dubai_app_studio/features/history/domain/entities/history_item.dart';
-import 'package:dubai_app_studio/features/history/presentation/widgets/history_item_card.dart';
+import 'package:dubai_app_studio/features/recharge/domain/entities/history_item.dart';
+import 'package:dubai_app_studio/features/recharge/presentation/widgets/history_item_card.dart';
 
 class HistoryTab extends StatelessWidget {
   const HistoryTab({

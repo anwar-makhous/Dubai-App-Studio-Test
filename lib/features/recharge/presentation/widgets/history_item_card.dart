@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:dubai_app_studio/core/app_constants.dart';
-import 'package:dubai_app_studio/features/history/domain/entities/history_item.dart';
+import 'package:dubai_app_studio/features/recharge/domain/entities/history_item.dart';
 
 class HistoryItemCard extends StatelessWidget {
   final HistoryItem historyItem;
