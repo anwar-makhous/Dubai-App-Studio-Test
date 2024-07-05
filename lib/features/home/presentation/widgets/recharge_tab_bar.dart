@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:dubai_app_studio/features/beneficiary/presentation/widgets/beneficiaries_tab.dart';
-import 'package:dubai_app_studio/core/app_constants.dart';
+import 'package:dubai_app_studio/core/constants/app_constants.dart';
 import 'package:dubai_app_studio/features/recharge/presentation/widgets/history_tab.dart';
 
 class RechargeTabBar extends StatefulWidget {

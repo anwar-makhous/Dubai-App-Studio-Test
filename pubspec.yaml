@@ -15,6 +15,9 @@ dependencies:
   flutter_screenutil: ^5.9.3
   equatable: ^2.0.5
   dartz: ^0.10.1
+  flutter_secure_storage: ^9.2.2
+  connectivity_plus: ^6.0.3
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:

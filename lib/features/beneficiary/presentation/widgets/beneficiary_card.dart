@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:dubai_app_studio/features/beneficiary/domain/entities/beneficiary.dart';
-import 'package:dubai_app_studio/core/app_constants.dart';
+import 'package:dubai_app_studio/core/constants/app_constants.dart';
 
 class BeneficiaryCard extends StatelessWidget {
   final Beneficiary beneficiary;
