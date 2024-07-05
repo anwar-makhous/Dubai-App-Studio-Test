@@ -13,8 +13,8 @@ class MockHttpServer extends http.BaseClient {
 
   @override
   Future<http.StreamedResponse> send(http.BaseRequest request) async {
-    // simulate waiting for 2 seconds
-    await Future.delayed(const Duration(seconds: 2));
+    // simulate waiting for 1 seconds
+    await Future.delayed(const Duration(seconds: 1));
 
     if (request.url.path == '/balance' && request.method == 'GET') {
       return _getBalance(request);
