@@ -24,6 +24,8 @@ abstract class Failure extends Equatable {
         return UnknownFailure(exception.message);
       case BadResponseException exception:
         return BadResponseFailure(exception.message);
+      case InsufficientBalanceException exception:
+        return InsufficientBalanceFailure(exception.message);
       default:
         return const UnknownFailure(AppMessages.unknown);
     }
@@ -82,4 +84,13 @@ class BadResponseFailure extends Failure {
 
   @override
   String get errorMessage => _message ?? AppMessages.badResponse;
+}
+
+class InsufficientBalanceFailure extends Failure {
+  @override
+  final String? _message;
+  const InsufficientBalanceFailure([this._message]) : super(_message);
+
+  @override
+  String get errorMessage => _message ?? AppMessages.error402;
 }

@@ -8,6 +8,8 @@ extension ResponseExtension on http.Response {
         return;
       case 401:
         throw UnauthorizedException();
+      case 402:
+        throw InsufficientBalanceException();
       case 404:
         throw NotFoundException();
       case 500:
@@ -46,4 +48,9 @@ class UnknownException implements Exception {
 class BadResponseException implements Exception {
   final String? message;
   BadResponseException([this.message]);
+}
+
+class InsufficientBalanceException implements Exception {
+  final String? message;
+  InsufficientBalanceException([this.message]);
 }
