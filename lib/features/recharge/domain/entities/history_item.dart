@@ -1,20 +1,23 @@
-class HistoryItem {
+import 'package:equatable/equatable.dart';
+
+class HistoryItem extends Equatable {
   final String name;
-  final String number;
-  final int amount;
+  final String phoneNumber;
+  final double amount;
+  final DateTime date;
 
-  HistoryItem({required this.name, required this.number, required this.amount});
+  const HistoryItem({
+    required this.name,
+    required this.phoneNumber,
+    required this.amount,
+    required this.date,
+  });
+
+  @override
+  List<Object?> get props => [name, phoneNumber, amount, date];
+
+  @override
+  String toString() {
+    return 'HistoryItem(name: $name, phoneNumber: $phoneNumber, amount: $amount, date: $date)';
+  }
 }
-
-List<HistoryItem> dummyHistoryItems = [
-  HistoryItem(name: "Kumar Suresh", number: "+915255219205", amount: 10),
-  HistoryItem(name: "Amit Pahandit", number: "+915255219205", amount: 30),
-  HistoryItem(name: "Daniel Smith", number: "+915255219205", amount: 75),
-  HistoryItem(name: "Amit Pahandit", number: "+915255219205", amount: 100),
-  HistoryItem(name: "Kumar Suresh", number: "+915255219205", amount: 5),
-  HistoryItem(name: "Amit Pandey ", number: "+915255219205", amount: 20),
-  HistoryItem(name: "Amit Pandey ", number: "+915255219205", amount: 20),
-  HistoryItem(name: "Amit Pahandit", number: "+915255219205", amount: 75),
-  HistoryItem(name: "Daniel Smith", number: "+915255219205", amount: 50),
-  HistoryItem(name: "Kumar Suresh", number: "+915255219205", amount: 100),
-];
