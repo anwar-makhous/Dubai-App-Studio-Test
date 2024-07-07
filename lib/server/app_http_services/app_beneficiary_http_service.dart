@@ -1,4 +1,4 @@
-part of 'http_services.dart';
+part of 'app_http_services.dart';
 
 class AppBeneficiaryHttpService {
   final AppStorage storage;

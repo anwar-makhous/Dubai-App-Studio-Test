@@ -4,8 +4,6 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:dubai_app_studio/core/network/network_info.dart';
-import 'package:dubai_app_studio/core/server/app_server.dart';
-import 'package:dubai_app_studio/core/server/http_services/http_services.dart';
 import 'package:dubai_app_studio/core/services/app_storage.dart';
 import 'package:dubai_app_studio/features/account/data/data_sources/account_data_source.dart';
 import 'package:dubai_app_studio/features/account/data/data_sources/account_remote_data_source.dart';
@@ -31,6 +29,8 @@ import 'package:dubai_app_studio/features/recharge/domain/usecases/get_recharge_
 import 'package:dubai_app_studio/features/recharge/domain/usecases/send_amount.dart';
 import 'package:dubai_app_studio/features/recharge/presentation/blocs/history_bloc/history_bloc.dart';
 import 'package:dubai_app_studio/features/recharge/presentation/blocs/recharge_bloc/recharge_bloc.dart';
+import 'package:dubai_app_studio/server/app_http_services/app_http_services.dart';
+import 'package:dubai_app_studio/server/app_server.dart';
 
 final sl = GetIt.instance;
 void initServiceLocator() {

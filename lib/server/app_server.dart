@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import 'package:dubai_app_studio/core/server/app_http_failure.dart';
-import 'package:dubai_app_studio/core/server/http_services/http_services.dart';
+import 'package:dubai_app_studio/server/app_http_failure.dart';
+import 'package:dubai_app_studio/server/app_http_services/app_http_services.dart';
 
 class AppServer extends http.BaseClient {
   final AppHistoryHttpService historyService;
