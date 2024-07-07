@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class AppColors {
+  AppColors._();
   static const deepBlue = Color(0xFF040273);
   static const lightGrey = Color(0xFFDDDDDD);
 }
 
 class AppFontSizes {
-  static final mediumLabel = 28.sp;
-  static final smallLabel = 16.sp;
-  static final tinyLabel = 12.sp;
+  AppFontSizes._();
+  static final xLarge = 28.sp;
+  static final large = 24.sp;
+  static final medium = 20.sp;
+  static final small = 16.sp;
+  static final tiny = 12.sp;
 }
 
 class AppAnimation {
+  AppAnimation._();
   static const Duration duration = Duration(milliseconds: 400);
   static const Curve curve = Curves.easeInToLinear;
 }
 
-class AppMessages {
-  static const String noInternet = 'Please check your connection!';
-  static const String error401 = "Unauthorized!";
-  static const String error404 = "Page Not Found!";
-  static const String error500 = "Server Error!";
-  static const String unknown = "Something went wrong!";
-  static const String badResponse = "Bad response format!";
+class AppConfig {
+  AppConfig._();
+  static const int maxBeneficiariesCount = 5;
+  static const List<int> rechargeOptions = [5, 10, 20, 30, 50, 75, 100];
+  static const String apiBaseUrl = "https://api.anwar-makhous.com";
+  static const String countryCode = "+971";
+  static const String currency = "AED";
+  static final NumberFormat numberFormat =
+      NumberFormat.decimalPatternDigits(decimalDigits: 2);
+  static final DateFormat dateFormat = DateFormat.yMMMMEEEEd();
 }

@@ -1,42 +1,41 @@
 class AppValidation {
   AppValidation._();
 
-  static String? Function(String?) emailValidation = (email) {
-    String pattern = AppRegExp.email;
+  static String? Function(String?) nameValidation = (name) {
+    String pattern = AppRegExp.name;
     RegExp regex = RegExp(pattern);
-    if (regex.hasMatch(email!)) {
+    if (regex.hasMatch(name!)) {
       return null;
-    } else if (email.isEmpty) {
+    } else if (name.isEmpty) {
       return ValidationErrorMessage.emptyField;
     } else {
-      return ValidationErrorMessage.invalidEmail;
+      return ValidationErrorMessage.invalidName;
     }
   };
 
-  static String? Function(String?) passwordValidation = (password) {
-    String pattern = AppRegExp.password;
+  static String? Function(String?) phoneNumberValidation = (phoneNumber) {
+    String pattern = AppRegExp.phoneNumber;
     RegExp regex = RegExp(pattern);
-    if (regex.hasMatch(password!)) {
+    if (regex.hasMatch(phoneNumber!)) {
       return null;
-    } else if (password.isEmpty) {
+    } else if (phoneNumber.isEmpty) {
       return ValidationErrorMessage.emptyField;
     } else {
-      return ValidationErrorMessage.invalidPassword;
+      return ValidationErrorMessage.invalidPhoneNumber;
     }
   };
 }
 
 class AppRegExp {
   AppRegExp._();
-  static const String email = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
-  static const String password =
-      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$';
+  static const String name = r"^.{1,20}$";
+  static const String phoneNumber = r"^[0-9]{9}$";
 }
 
 class ValidationErrorMessage {
   ValidationErrorMessage._();
-  static String invalidEmail = 'invalid email';
-  static String invalidPassword =
-      'The password is invalid.  Passwords must be 8 characters long, have one uppercase letter, one lowercase letter and one digit';
+  static String invalidName = "invalid name, max length is 20";
+  static String invalidPhoneNumber =
+      "phone number needs to be 9 digits, no need to add country code.";
   static String emptyField = 'this field is required';
 }

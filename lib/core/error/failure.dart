@@ -27,7 +27,7 @@ abstract class Failure extends Equatable {
       case InsufficientBalanceException exception:
         return InsufficientBalanceFailure(exception.message);
       default:
-        return const UnknownFailure(AppMessages.unknown);
+        return const UnknownFailure(FailureMessages.unknown);
     }
   }
 }
@@ -38,7 +38,7 @@ class NoInternetFailure extends Failure {
   const NoInternetFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.noInternet;
+  String get errorMessage => _message ?? FailureMessages.noInternet;
 }
 
 class UnauthorizedFailure extends Failure {
@@ -47,7 +47,7 @@ class UnauthorizedFailure extends Failure {
   const UnauthorizedFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.error401;
+  String get errorMessage => _message ?? FailureMessages.error401;
 }
 
 class NotFoundFailure extends Failure {
@@ -56,7 +56,7 @@ class NotFoundFailure extends Failure {
   const NotFoundFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.error404;
+  String get errorMessage => _message ?? FailureMessages.error404;
 }
 
 class ServerFailure extends Failure {
@@ -65,7 +65,7 @@ class ServerFailure extends Failure {
   const ServerFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.error500;
+  String get errorMessage => _message ?? FailureMessages.error500;
 }
 
 class UnknownFailure extends Failure {
@@ -74,7 +74,7 @@ class UnknownFailure extends Failure {
   const UnknownFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.unknown;
+  String get errorMessage => _message ?? FailureMessages.unknown;
 }
 
 class BadResponseFailure extends Failure {
@@ -83,7 +83,7 @@ class BadResponseFailure extends Failure {
   const BadResponseFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.badResponse;
+  String get errorMessage => _message ?? FailureMessages.badResponse;
 }
 
 class InsufficientBalanceFailure extends Failure {
@@ -92,5 +92,16 @@ class InsufficientBalanceFailure extends Failure {
   const InsufficientBalanceFailure([this._message]) : super(_message);
 
   @override
-  String get errorMessage => _message ?? AppMessages.error402;
+  String get errorMessage => _message ?? FailureMessages.error402;
+}
+
+class FailureMessages {
+  FailureMessages._();
+  static const String noInternet = 'Please check your connection!';
+  static const String error401 = "Unauthorized!";
+  static const String error402 = "Insufficient balance!";
+  static const String error404 = "Not Found!";
+  static const String error500 = "Server Error!";
+  static const String unknown = "Something went wrong!";
+  static const String badResponse = "Bad response format!";
 }
