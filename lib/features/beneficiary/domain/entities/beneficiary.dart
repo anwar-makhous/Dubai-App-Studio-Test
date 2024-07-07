@@ -1,14 +1,36 @@
-class Beneficiary {
+import 'package:equatable/equatable.dart';
+
+class Beneficiary extends Equatable {
   final String name;
-  final String number;
+  final String phoneNumber;
+  final bool isVerified;
+  final double totalTransactions;
 
-  Beneficiary({required this.name, required this.number});
+  const Beneficiary(
+      {required this.name,
+      required this.phoneNumber,
+      required this.isVerified,
+      required this.totalTransactions});
+
+  @override
+  String toString() {
+    return 'Beneficiary(name: $name, phoneNumber: $phoneNumber, isVerified: $isVerified, totalTransactions: $totalTransactions)';
+  }
+
+  @override
+  List<Object?> get props => [name, phoneNumber, isVerified, totalTransactions];
+
+  Beneficiary copyWith({
+    String? name,
+    String? phoneNumber,
+    bool? isVerified,
+    double? totalTransactions,
+  }) {
+    return Beneficiary(
+      name: name ?? this.name,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      isVerified: isVerified ?? this.isVerified,
+      totalTransactions: totalTransactions ?? this.totalTransactions,
+    );
+  }
 }
-
-List<Beneficiary> dummyBeneficiaries = [
-  Beneficiary(name: "Amit Pahandit", number: "+915255219205"),
-  Beneficiary(name: "Kumar Suresh", number: "+915255219205"),
-  Beneficiary(name: "Amit Pandey ", number: "+915255219205"),
-  Beneficiary(name: "Anwar Makhous", number: "+915255219205"),
-  Beneficiary(name: "Daniel Smith", number: "+915255219205"),
-];
