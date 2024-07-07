@@ -1,3 +1,4 @@
+import 'package:dubai_app_studio/features/recharge/presentation/pages/recharge_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,19 +26,25 @@ class BeneficiaryCard extends StatelessWidget {
             beneficiary.name,
             style: TextStyle(
               color: AppColors.deepBlue,
-              fontSize: AppFontSizes.smallLabel,
+              fontSize: AppFontSizes.small,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            beneficiary.number,
+            "${AppConfig.countryCode}-${beneficiary.phoneNumber}",
             style: TextStyle(
               color: Colors.grey,
-              fontSize: AppFontSizes.tinyLabel,
+              fontSize: AppFontSizes.tiny,
             ),
           ),
           FilledButton.tonal(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          RechargePage(beneficiary: beneficiary)));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blueAccent,
               foregroundColor: Colors.white,
@@ -47,7 +54,7 @@ class BeneficiaryCard extends StatelessWidget {
               "Recharge now",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: AppFontSizes.tinyLabel,
+                fontSize: AppFontSizes.tiny,
               ),
             ),
           ),
