@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:dubai_app_studio/features/beneficiary/presentation/blocs/beneficiaries_bloc/beneficiaries_bloc.dart';
-import 'package:dubai_app_studio/features/home/presentation/blocs/home_bloc/home_bloc.dart';
-import 'package:dubai_app_studio/features/home/presentation/pages/home_page.dart';
+import 'package:dubai_app_studio/features/account/presentation/blocs/account_bloc/account_bloc.dart';
+import 'package:dubai_app_studio/features/account/presentation/pages/home_page.dart';
 import 'package:dubai_app_studio/features/recharge/presentation/blocs/history_bloc/history_bloc.dart';
 import 'package:dubai_app_studio/features/recharge/presentation/blocs/recharge_bloc/recharge_bloc.dart';
 import 'package:dubai_app_studio/injection_container.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   initServiceLocator();
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, _) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider<HomeBloc>(create: (context) => sl<HomeBloc>()),
+            BlocProvider<AccountBloc>(create: (context) => sl<AccountBloc>()),
             BlocProvider<HistoryBloc>(create: (context) => sl<HistoryBloc>()),
             BlocProvider<RechargeBloc>(create: (context) => sl<RechargeBloc>()),
             BlocProvider<BeneficiariesBloc>(
