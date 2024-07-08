@@ -37,10 +37,10 @@ void main() {
     });
 
     test('fromJson returns a valid AccountInfoModel instance', () {
-      final json = {
+      final json = jsonEncode({
         'balance': 100.0,
         'totalTransactions': 5.0,
-      };
+      });
       final accountInfoModel = AccountInfoModel.fromJson(json);
       expect(accountInfoModel, isA<AccountInfoModel>());
       expect(accountInfoModel.balance, 100.0);
