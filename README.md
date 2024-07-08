@@ -15,7 +15,7 @@ This Flutter application was developed as a technical assessment for an intervie
 The project follows the CLEAN architecture, structured into distinct layers:
 
 ```
-Dubai-App-Studio-Test
+lib
 ├── core
 │   ├── constants
 │   │   ├── app_constants.dart
