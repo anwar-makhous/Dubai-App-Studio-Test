@@ -10,35 +10,6 @@ This Flutter application was developed as a technical assessment for an intervie
 - **Unit Testing**: Unit tests are implemented for the data and domain layers of each feature, as well as for blocs in the presentation layer, as well as core directory files. These tests cover core functionalities and ensure robustness using `flutter_test`, `bloc_test` and `mockito`.
 
 
-## Getting Started
-
-### Prerequisites
-
-- Flutter SDK
-- Dart
-
-### Installation
-
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/anwar-makhous/Dubai-App-Studio-Test.git
-    ```
-2. **Navigate to the project directory**:
-    ```bash
-    cd Dubai-App-Studio-Test
-    ```
-3. **Install dependencies**:
-    ```bash
-    flutter pub get
-    ```
-
-### Running the App
-
-- **Run on an emulator or connected device**:
-    ```bash
-    flutter run
-    ```
-
 ## Project Structure
 
 The project follows the CLEAN architecture, structured into distinct layers:
