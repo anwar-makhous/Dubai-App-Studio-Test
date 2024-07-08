@@ -15,8 +15,9 @@ class AccountInfoModel extends AccountInfo {
       {required this.balance, required this.totalTransactions})
       : super(balance: balance, totalTransactions: totalTransactions);
 
-  factory AccountInfoModel.fromJson(json) {
+  factory AccountInfoModel.fromJson(response) {
     try {
+      Map json = jsonDecode(response);
       return AccountInfoModel(
         balance: json['balance'],
         totalTransactions: json['totalTransactions'],

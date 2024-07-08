@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 import 'package:dubai_app_studio/core/constants/app_constants.dart';
@@ -17,6 +15,6 @@ class AccountRemoteDataSource implements AccountDataSource {
     final Uri uri = Uri.parse('${AppConfig.apiBaseUrl}/account_info');
     final http.Response response = await client.get(uri);
     response.checkException();
-    return AccountInfoModel.fromJson(json.decode(response.body));
+    return AccountInfoModel.fromJson(response.body);
   }
 }
