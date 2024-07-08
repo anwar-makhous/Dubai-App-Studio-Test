@@ -25,6 +25,9 @@ class AppAnimation {
 
 class AppConfig {
   AppConfig._();
+
+  // change this value to test the app with different starting balance
+  static const virtualStartingBalance = 5000.00;
   static const int maxBeneficiariesCount = 5;
   static const List<int> rechargeOptions = [5, 10, 20, 30, 50, 75, 100];
   static const String apiBaseUrl = "https://api.anwar-makhous.com";

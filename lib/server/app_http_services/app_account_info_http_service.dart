@@ -7,8 +7,8 @@ class AppAccountInfoHttpService {
 
   Future<http.StreamedResponse> fetchAccountInfo(
       http.BaseRequest request) async {
-    AccountInfoModel accountInfoModel =
-        const AccountInfoModel(balance: 20000.00, totalTransactions: 0.0);
+    AccountInfoModel accountInfoModel = const AccountInfoModel(
+        balance: AppConfig.virtualStartingBalance, totalTransactions: 0.0);
     final String? data = await storage.read(key: 'accountInfo');
     if (data != null) {
       accountInfoModel = AccountInfoModel.fromJson(jsonDecode(data));
