@@ -7,7 +7,7 @@ This Flutter application was developed as a technical assessment for an intervie
 - **CLEAN Architecture**: The project is structured following the CLEAN architecture principles, promoting separation of concerns and making the codebase scalable and maintainable.
 - **BLoC State Management**: Utilizes the BLoC pattern to manage state effectively, ensuring a clear separation between business logic and UI components.
 - **Local Server**: A Dart server is included in `lib/server` to simulate server responses, enabling easy testing and development without relying on a live backend.
-- **Unit Testing**: Unit tests are implemented for the data and domain layers of each feature, as well as for blocs in the presentation layer, as well as core directory files. These tests cover core functionalities and ensure robustness using `bloc_test` and `mockito`.
+- **Unit Testing**: Unit tests are implemented for the data and domain layers of each feature, as well as for blocs in the presentation layer, as well as core directory files. These tests cover core functionalities and ensure robustness using `flutter_test`, `bloc_test` and `mockito`.
 
 
 ## Getting Started
@@ -182,7 +182,7 @@ Dubai-App-Studio-Test
 
 ## Testing
 
-Unit tests are implemented for the data and domain layers of each feature, as well as for blocs in the presentation layer and core files. These tests cover core functionalities and ensure robustness using `bloc_test` and `mockito`.
+Unit tests are implemented for the data and domain layers of each feature, as well as for blocs in the presentation layer and core files. These tests cover core functionalities and ensure robustness using `flutter_test`, `bloc_test` and `mockito`.
 
 ### Running Tests
 
