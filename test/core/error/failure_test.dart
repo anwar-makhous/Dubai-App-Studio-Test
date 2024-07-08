@@ -56,6 +56,12 @@ void main() {
       expect(failure, isA<InsufficientBalanceFailure>());
       expect(failure.errorMessage, FailureMessages.error402);
     });
+    test('should return BadResponseFailure when FormatException is passed', () {
+      const exception = FormatException();
+      final failure = Failure.fromException(exception);
+      expect(failure, isA<BadResponseFailure>());
+      expect(failure.errorMessage, FailureMessages.badResponse);
+    });
 
     test('should return UnknownFailure when unknown exception is passed', () {
       final exception = Exception();

@@ -26,6 +26,8 @@ abstract class Failure extends Equatable {
         return BadResponseFailure(exception.message);
       case InsufficientBalanceException exception:
         return InsufficientBalanceFailure(exception.message);
+      case FormatException _:
+        return const BadResponseFailure(FailureMessages.badResponse);
       default:
         return const UnknownFailure(FailureMessages.unknown);
     }
