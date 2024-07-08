@@ -7,20 +7,15 @@ extension ResponseExtension on http.Response {
       case 200:
         return;
       case 401:
-        String? errorMessage = jsonDecode(body)["error"];
-        throw UnauthorizedException(errorMessage);
+        throw UnauthorizedException();
       case 402:
-        String? errorMessage = jsonDecode(body)["error"];
-        throw InsufficientBalanceException(errorMessage);
+        throw InsufficientBalanceException();
       case 404:
-        String? errorMessage = jsonDecode(body)["error"];
-        throw NotFoundException(errorMessage);
+        throw NotFoundException();
       case 500:
-        String? errorMessage = jsonDecode(body)["error"];
-        throw ServerException(errorMessage);
+        throw ServerException();
       default:
-        String? errorMessage = jsonDecode(body)["error"];
-        throw BadResponseException(errorMessage);
+        throw UnknownException();
     }
   }
 }

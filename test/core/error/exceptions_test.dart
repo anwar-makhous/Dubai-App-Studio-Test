@@ -36,12 +36,10 @@ void main() {
       expect(() => response.checkException(), throwsA(isA<ServerException>()));
     });
 
-    test(
-        'throws BadResponseException if statusCode is not 200, 401, 404, or 500',
+    test('throws UnknownException if statusCode is not 200, 401, 404, or 500',
         () {
       final response = http.Response(tEmptyBody, 403);
-      expect(() => response.checkException(),
-          throwsA(isA<BadResponseException>()));
+      expect(() => response.checkException(), throwsA(isA<UnknownException>()));
     });
   });
 }
