@@ -41,7 +41,7 @@ void main() {
         'balance': 100.0,
         'totalTransactions': 5.0,
       });
-      final accountInfoModel = AccountInfoModel.fromJson(json);
+      final accountInfoModel = AccountInfoModel.fromJson(jsonDecode(json));
       expect(accountInfoModel, isA<AccountInfoModel>());
       expect(accountInfoModel.balance, 100.0);
       expect(accountInfoModel.totalTransactions, 5.0);

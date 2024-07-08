@@ -81,7 +81,7 @@ void main() {
     });
     test('throws BadResponseException when response is empty', () async {
       when(mockHttpClient.get(any))
-          .thenAnswer((_) async => http.Response('', 200));
+          .thenAnswer((_) async => http.Response(jsonEncode(''), 200));
       accountRemoteDataSource = AccountRemoteDataSource(client: mockHttpClient);
       expect(() async => await accountRemoteDataSource.getAccountInfo(),
           throwsA(isA<BadResponseException>()));
